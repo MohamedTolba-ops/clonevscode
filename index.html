@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone Code</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+<body>
+    <div class="container home">
+        <section class="header-content">
+            <div class="container ">
+                <header class="d-flex flex-wrap justify-content-center  ">
+                  
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 container-fluid">
+                            <a href="/" class=" d-flex align-items-center mb-2 mb-md-0 me-md-2 link-body-emphasis text-decoration-none">
+                                <img class="bi me-2" width="20" height="32" src="./images/visual-studio-code-1.svg">
+                                <span class="">Visual Studio Code</span>
+                              </a>
+                          <li><a href="https://code.visualstudio.com/docs" class="nav-link px-2 link-secondary">Docs</a></li>
+                          <li><a href="https://code.visualstudio.com/updates/v1_97" class="nav-link px-2 link-secondary">Updates</a></li>
+                          <li><a href="https://code.visualstudio.com/blogs/2025/02/12/next-edit-suggestions" class="nav-link px-2 link-secondary">Blog</a></li>
+                          <li><a href="https://code.visualstudio.com/api" class="nav-link px-2 link-secondary">Api</a></li>
+                          <li><a href="https://marketplace.visualstudio.com/VSCode" class="nav-link px-2 link-secondary">Extensions</a></li>
+                          <li><a href="https://code.visualstudio.com/docs/supporting/faq" class="nav-link px-2 link-secondary">FAQ</a></li>
+                          <li><a href="https://code.visualstudio.com/docs/copilot/overview" class="nav-link px-2 link-secondary">GitHub Copilot</a></li>
+                          <div>
+                            <form class=" search-fill" role="search">
+                            <input style=" height: 30px; width: 75%; margin-top: 3%; " type="search" class="me-sm-1 px-2 container-fluid form-control" placeholder="Search Docs" aria-label="Search">
+                          </form></div>
+                          <li><button style="margin-right: 0px;" type="button" class="btn btn-primary btn-sm px-2 down-btn">Download</button></li>
+                        </ul>
+                
+                        
+                      </div>
+                    </div>
+                  </header>
+                </header>
+              </div>
+        </section>
+        <section class="hero-content col-sm-12">
+            <div class="px-4 pt-5  text-center ">
+                <h1  class ="fw-bold text mb-3" >Your code editor. <br > Redefined with AI.</h1>
+                <div class="download-content-wrapper">
+                    <div id="download-buttons" class="download-hero alt-downloads win">
+                        <!-- Download for user's current OS -->
+                        <div class="primary-buttons">
+                            <a href="https://code.visualstudio.com/docs/?dv=win64user">
+                            <button type="button"  class="btn btn-primary btn-md px-3 me-md-1" data-os="win" id="download-buttons-win" href="https://code.visualstudio.com/docs/?dv=win64user">Download for Windows</button>
+                            </a>
+                            <a href="vscode://github.copilot-chat?referrer=vscode-cta">
+                            <button type="button"  class="btn btn-outline-secondary btn-md px-3 me-md-2"  style="color: #9ba3b4;">Get Copilot Free</button>
+                                </div> </a>
+                        </div>
+                    </div>
+                    <p style="margin-top: 5px; font-size: 10px;" id="download-matrix-label" class="hero-alt-download-links"><a href="https://vscode.dev/" target="_blank" rel="noopener" title="For quick code edits locally or remotely on GitHub and Azure Repos." id="download-buttons-web">Web</a>, <a href="https://code.visualstudio.com/insiders/" id="download-buttons-insiders">Insiders edition</a>, or <a href="https://code.visualstudio.com/Download">other platforms</a></p>
+                    <p style="font-size: 8px;" class="text-muted  terms">By using VS Code, you agree to its <span class="wrap-together"><a href="https://code.visualstudio.com/license" target="_blank" rel="noopener" title="View the Visual Studio Code license.">license</a> and <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank" rel="noopener" title="View the Microsoft privacy statement.">privacy statement</a>.</span></p>
+                </div>       </div>
+                <div class="hero-video-container text-center" aria-label="A demonstration animation of VS Code using Copilot Chat, Copilot Edits, Inline Chat, and AI-assisted commit message generation to create and refine a Wordle clone web app built with React and Vite.">
+                    <video style="border-radius: 30px;" width="1008" height="639" id="hero-video-dark" class="hero-video dark"  poster="./images/videoframe_0.png" playsinline="" autoplay >
+                        <source src="./images/Visual Studio Code - Code Editing. Redefined.webm" media="(max-width: 4991px)">
+                    </video>
+                </div>
+            <div class="video-control text-center">
+                <button type="button" id="hero-video-button"  aria-pressed="true" class="btn btn-outline-secondary btn-md px-3" aria-label="Hero animation has ended. Click to replay.">Replay</button>
+            </div>
+            <script>
+                const videoDark = document.querySelector("#hero-video-dark");
+                const button = document.querySelector("#hero-video-button");
+                button.addEventListener("click", () => {
+                    if (videoDark.paused) {
+                        videoDark.play();
+                        button.textContent = "Pause";
+                        button.ariaPressed = "false";
+                        button.ariaLabel = "Hero animation is currently playing. Click to pause.";
+                    } else {
+                        videoDark.pause();
+                        button.textContent = "Play";
+                        button.ariaPressed = "true";
+                        button.ariaLabel = "Hero animation is paused. Click to play.";
+                    }
+                });
+                videoDark.addEventListener("ended", () => {
+                    videoDark.currentTime = 0;
+                    button.textContent = "Replay";
+                    button.ariaPressed = "true";
+                    button.ariaLabel = "Hero animation has ended. Click to replay.";
+                });
+            </script>
+        </section>
+        <section class=" first-feature ">
+            <div style="padding-top: 80px; max-width: 1350px; height: auto; margin-left: 599px;;" class="row row-cols-1 row-cols-lg-4 justify-content-center  g-4 ">
+                <div class="col">
+                  <div  class="card card-cover h-100 overflow-hidden fw-bold rounded-4 " style="background-color: #15181e; ">
+                    <div class="d-flex flex-column h-100 p-3 text-white text-shadow-1">
+                      <p style="color: #a2d0e5;" class="">Choose the model that works for you <br> </p> <p style="color: #9ba3b4;"> the model that works best for your project and team, including GPT 4o and Claude Sonnet.</p>
+                      <img src="./images/first feat.png">
+                      <ul class="d-flex list-unstyled mt-auto">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card card-cover h-100 overflow-hidden fw-bold rounded-4 shadow-lg" style="background-color: #15181e;">
+                    <div class="d-flex flex-column h-100 p-3 text-white text-shadow-1">
+                      <p style="color: #a2d0e5;" class="">An expert on your codebase<br> </p> <p style="color: #9ba3b4;"> Copilot locally indexes your codebase to understand what’s relevant and supplements that context to interactions with Copilot.</p>
+                      <img src="./images/sec feat.png">
+                      <ul class="d-flex list-unstyled mt-auto">
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card card-cover h-100 overflow-hidden fw-bold  rounded-4 shadow-lg" style="background-color: #15181e;">
+                    <div class="d-flex flex-column h-100 p-3 text-shadow-1">
+                      <p style="color: #a2d0e5;" class="">Personalized to your needs <br> </p> <p style="color: #9ba3b4;"> works the way you do. Customize Copilot's prompts with details about your team's workflows, tools, and projects.</p>
+                      <img src="./images/third feat.png">
+                      <ul class="d-flex list-unstyled mt-auto">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+        <section class="second-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-5">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class="col-lg-5">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Multi-file edits</h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">Describe what you want to build in natural language, and Copilot Edits takes care of the rest. Copilot Edits makes changes across files in your codebase with a UI designed for rapid iteration. It's the fastest way to add new functionality to your apps.</p>
+                    <a style="margin-left: 650px;" href="https://code.visualstudio.com/docs/copilot/copilot-edits">Build with Copilot Edits</a>
+                    </div>
+                    <div style="margin-left: 60px;" class="col-10 col-sm-8 col-lg-6">
+                    <img  src="./images/firsthero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="third-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-1">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class="col-lg-5">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Code suggestions
+                    </h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">Copilot predicts your next thought with Next Edit Suggestions. Use the Tab key to accept AI-powered suggestions right in your editor. Next Edit Suggestions will intelligently suggest where and what to change across your file based on the edits you're making.</p>
+                    <a style="margin-left: 650px;" href="https://code.visualstudio.com/docs/copilot/ai-powered-suggestions">Pair program with Copilot</a>
+                    </div>
+                    <div style="margin-left: 60px;" class="col-10 col-sm-8 col-lg-6">
+                    <img  src="./images/sechero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="forth-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-3">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class="col-lg-5">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Code with extensions
+                    </h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">xtensions let you customize VS Code and Copilot with AI-powered features grounded securely in your team's data and workflows. Grab one from the gallery and add it to chat like @azure, or <a href="https://code.visualstudio.com/docs/copilot/copilot-extensibility-overview">build your own Copilot extension</a> to power your team's unique scenarios.</p>
+                    </div>
+                    <div style="margin-left: 60px;" class="col-10 col-sm-8 col-lg-6">
+                    <img  src="./images/thirdhero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="fifth-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-3">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class="col-lg-5">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Code in any language
+                    </h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">VS Code supports almost every major programming language. Several ship in the box, like JavaScript, TypeScript, CSS, and HTML, but extensions for others can be found in the VS Code Marketplace.</p>
+                    </div>
+                    <div style="margin-left: 60px;" class="col-10 col-sm-8 col-lg-6">
+                    <img  src="./images/forthhero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="sixth-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-3">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class="col-md-6 me-lg-auto">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Fully customizable
+                    </h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">Customize your VS Code UI and layout <br>so that it fits your coding style. <br> <br>
+
+                        <a href="https://code.visualstudio.com/docs/getstarted/themes">Color themes</a>  let you modify the colors <br>in VS Code's user interface to suit your preferences and work environment.<br> 
+                        
+                        <a href="https://code.visualstudio.com/docs/getstarted/settings#_settings-sync">Settings Sync</a>  enables you to share your user settings <br> across your VS Code instances with the Settings Sync feature.<br> 
+                        
+                        <a href="https://code.visualstudio.com/docs/editor/profiles">Profiles</a>  let you create sets of customizations and quickly switch between them or share them with others.</p>
+                    </div>
+                    <div style="margin-left: -130px;" class=" col-sm-6 col-lg">
+                    <img  src="./images/fifthhero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="seventh-feature feature-margin">
+            <div style=" width: 100%;" class="container-fluid  col-xxl-8 py-3">
+                <div class="row flex-lg-row align-items-center g-6 ">
+                  <div class=" fw-bold col-lg-6">
+                    <h1 style="margin-left: 650px; color: #9ba3b4;" class="h3 fw-bold lh-1 mb-3">Code anywhere
+                    </h1>
+                    <p style="margin-left: 650px; max-width: 400px; font-size: 1em; color: #9ba3b4; ;" class="lead  ">Code wherever you're most productive, whether you're connected to the cloud, a remote repository, or in the browser with VS Code for the Web (vscode.dev). <br> <br>
+
+                        <a href="https://code.visualstudio.com/docs/sourcecontrol/overview">Built-in Source Control</a> empowers you with Git support <br> out-of-the-box. Many other source control providers are available through extensions.<br><br>
+                        
+                        <a href="https://code.visualstudio.com/docs/remote/codespaces">GitHub Codespaces</a> provides cloud-powered <br> development environments for any activity - <br>whether it's a long-term project, or a short-term task like reviewing a pull request.</p>
+                    </div>
+                    <div style="margin-left: -130px;" class="col-sm-8 col-lg">
+                    <img  src="./images/sixthhero.png" class="img-fluid" alt="Bootstrap Themes" width="650" height="500" loading="lazy">
+                  </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="cool-text">
+            <div class="secondary-tagline col-sm-12">
+            <h2>Code with rich features</h2>
+            <p class="cool-p">There's a lot more to an editor. Whether it's using built-in features or <br>rich extensions, there's
+                something for everyone.</p>
+        </div>
+        </section>
+        <section class="rich-features">
+            <div class="feature-grid1 ">
+                <a href="https://code.visualstudio.com/docs/terminal/basics" class="feature-card">
+                    <img class="feature-card-img" src="./images/terminal-box-svgrepo-com.svg" alt="terminal icon">
+                    <h3 class="feature-card-title">Integrated terminal</h3>
+                    <p class="feature-card-p">Use your favorite shell whether it's zsh, pwsh, or git bash, all inside the editor.
+                    </p>
+                    
+                </a>
+            </div>
+            <div class="feature-grid1"  >
+                <a href="https://code.visualstudio.com/docs/editor/debugging" class="feature-card">
+                    <img class="feature-card-img" src="./images/2.svg" alt="debug icon">
+                    <h3 class="feature-card-title">Run code</h3>
+                    <p class="feature-card-p">Run and debug your code without leaving your editor.</p>
+                </a>
+            </div>
+            <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/docs/sourcecontrol/overview" class="feature-card">
+                    <img class="feature-card-img" src="./images/3.svg" alt="branching icon">
+                    <h3 class="feature-card-title">Version control</h3>
+                    <p class="feature-card-p">Built-in support for git and many other source control providers.</p>
+                </a>
+            </div>
+            <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/docs/editor/tasks" class="feature-card">
+                    <img class="feature-card-img" src="./images/4.svg" alt="tools icon">
+                    <h3 class="feature-card-title">Build tasks</h3>
+                    <p class="feature-card-p">Run tools and analyze their results from within VS Code.</p>
+                </a></div>
+                <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/updates/v1_66#_local-history" class="feature-card">
+                    <img class="feature-card-img" src="./images/5.svg" alt="history icon">
+                    <h3 class="feature-card-title">Local history</h3>
+                    <p class="feature-card-p">Never lose your changes with automatically tracked local history.</p>
+                </a></div>
+                <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/docs/getstarted/themes" class="feature-card">
+                    <img class="feature-card-img" src="./images/6.svg" alt="palette icon">
+                    <h3 class="feature-card-title">Themes</h3>
+                    <p class="feature-card-p">Your theme is an extension of your personality. Add some flair to your editor and add your touch.</p>
+                </a></div>
+                <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/docs/editor/accessibility" class="feature-card">
+                    <img class="feature-card-img" src="./images/7.svg" alt="keyboard icon">
+                    <h3 class="feature-card-title">Accessibility</h3>
+                    <p class="feature-card-p">Optimized experience for screen readers, high contrast themes, and keyboard-only navigation.</p>
+                </a></div>
+                <div class="feature-grid1">
+                <a href="https://code.visualstudio.com/docs/editor/vscode-web" class="feature-card">
+                    <img class="feature-card-img" src="./images/8.svg" alt="globe icon">
+                    <h3 class="feature-card-title">Web support</h3>
+                    <p class="feature-card-p">Whether you are on your phone, tablet, or desktop, you can access your code from anywhere.</p>
+                </a></div>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="container main-footer"> 
+                <ul class="nav col-md-4 justify-content-start list-unstyled d-flex logo">
+                    <li class="ms-3"><a class="text-body-secondary" href="https://x.com/code"><img src="./images/x-icon.svg" class="bi" width="20" height="20"></img></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="https://github.com/microsoft/vscode"><img src="./images/github-icon.svg" class="bi" width="24" height="24"></img></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="https://www.youtube.com/@code"><img src="./images/youtube-icon.svg" class="bi" width="24" height="24"></img></a></li>
+                    <a class="  microsoft" href="https://www.microsoft.com/"><img src="./images/microsoft.svg" class="bi" width="24" height="24"></img></a>
+                  </ul>
+                <footer class="d-flex flex-wrap justify-content-between align-items-end py-3 my-4 ">
+                  
+                    <ul class="nav col-md-4 justify-content-start list-unstyled d-flex footer-text">
+                        <li class="ms-3"><a class="text-body-secondary" href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d66407ed-3967-b000-4cfb-2c318cad363d">Support</a></li>
+                        <li class="ms-3"><a class="text-body-secondary" href="https://www.microsoft.com/en-us/privacy/privacystatement">Privacy</a></li>
+                        <li class="ms-3"><a class="text-body-secondary" href="https://www.microsoft.com/en-us/legal/terms-of-use">Terms of Use</a></li>
+                        <li class="ms-3"><a class="text-body-secondary" href="https://code.visualstudio.com/License">License</a></li>
+                      </ul>
+                  </div>
+              
+
+                </footer>
+              </div>
+        </section>
+    </div>
+</body>
